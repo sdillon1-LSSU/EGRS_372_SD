@@ -1,0 +1,38 @@
+<launch>
+
+  <!-- Launch TurtleBot navigation -->
+  <include file="$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch">
+    <arg name="map_file" value="/home/egrs372/map.yaml" />
+  </include>
+
+  <!-- Lab 9 waypoint parameters -->
+  <param name="/L1/x" value="-1" />
+  <param name="/L1/y" value="0" />
+  <param name="/L1/theta" value="0" />
+
+  <param name="/L2/x" value="-1" />
+  <param name="/L2/y" value="-2" />
+  <param name="/L2/theta" value="0" />
+
+  <param name="/L3/x" value="3" />
+  <param name="/L3/y" value="-1.5" />
+  <param name="/L3/theta" value="0" />
+
+  <param name="/L4/x" value="-1" />
+  <param name="/L4/y" value="-3" />
+  <param name="/L4/theta" value="0" />
+
+  <param name="/L5/x" value="4" />
+  <param name="/L5/y" value="-3" />
+  <param name="/L5/theta" value="0" />
+
+  <!-- Lab 9 main logic -->
+  <node pkg="egrs372_lab9" type="lab9" name="lab9_launch" output="screen"/>
+
+  <!-- Safety visualization -->
+  <node pkg="egrs372_lab9" type="visual_updater" name="visual_updater" output="screen"/>
+
+  <!-- Human simulation -->
+  <node pkg="egrs372_lab9" type="human_sim" name="human_sim" output="screen"/>
+
+</launch>

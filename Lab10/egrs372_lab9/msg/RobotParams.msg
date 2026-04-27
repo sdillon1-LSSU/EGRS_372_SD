@@ -1,0 +1,4 @@
+float64 max_vel_x
+bool allow_backward
+float64 max_rot_vel
+bool adjust_orientation
